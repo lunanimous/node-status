@@ -1,5 +1,7 @@
 <?php
 
+use \Lunanimous\Rpc\NimiqClient;
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,5 +14,34 @@
 */
 
 $router->get('/', function () use ($router) {
-    return $router->app->make('view')->make('home');
+    try {
+        $config = [
+            'scheme' => 'http',
+            'host' => env('NODE_HOST', 'localhost'),
+            'port' => env('NODE_PORT', 8648),
+            'user' => env('NODE_USERNAME', null),
+            'password' => env('NODE_PASSWORD', null),
+            'timeout' => false,
+        ];
+
+        $client = new NimiqClient($config);
+
+        $isOnline = true;
+        $blockNumber = $client->getBlockNumber();
+        $peerCount = $client->getPeerCount();
+        $mempoolTransactions = $client->getMempool()->total;
+    } catch (Exception $exception) {
+        $isOnline = false;
+        $blockNumber = 'n/a';
+        $peerCount = 'n/a';
+        $mempoolTransactions = 'n/a';
+    }
+
+
+    return $router->app->make('view')->make('home')->with([
+        'isOnline' => $isOnline,
+        'blockNumber' => $blockNumber,
+        'peerCount' => $peerCount,
+        'mempoolTransactions' => $mempoolTransactions
+    ]);
 });
