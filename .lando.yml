@@ -1,0 +1,5 @@
+name: nimiq-node
+recipe: lamp
+config:
+  webroot: public
+  php: '7.2'
