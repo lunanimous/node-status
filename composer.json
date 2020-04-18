@@ -1,7 +1,7 @@
 {
-    "name": "laravel/lumen",
-    "description": "The Laravel Lumen Framework.",
-    "keywords": ["framework", "laravel", "lumen"],
+    "name": "lunanimous/node-status",
+    "description": "Status page for Nimiq node",
+    "keywords": ["node", "nimiq"],
     "license": "MIT",
     "type": "project",
     "require": {

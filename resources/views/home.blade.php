@@ -55,7 +55,7 @@
         </main>
 
         <footer class="sm:flex justify-between mt-12 text-sm text-gray-500">
-            <div>Made by <a class="underline" href="https://lunanimous.com" target="_blank" rel="nofollow">Lunanimous</a> for <a class="underline" href="https://nimiq.com" target="_blank" rel="nofollow">Nimiq</a>.</div>
+            <div>Made by <a class="underline" href="https://lunanimous.github.io/" target="_blank" rel="nofollow">Lunanimous</a> for <a class="underline" href="https://nimiq.com" target="_blank" rel="nofollow">Nimiq</a>.</div>
             <div>Powered by <a class="underline" href="https://lumen.laravel.com/" target="_blank" rel="nofollow">Lumen.</a></div>
         </footer>
     </div>
